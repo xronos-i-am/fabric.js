@@ -1231,7 +1231,10 @@
       };
 
       this.set('active', false);
-      this.setPositionByOrigin(new fabric.Point(el.width / 2, el.height / 2), 'center', 'center');
+
+      this.setScaleX( canvas.width / el.width );
+      this.setScaleY( canvas.height / el.height );
+      this.setPositionByOrigin(new fabric.Point(0, 0), 'left', 'top');
 
       var originalCanvas = this.canvas;
       canvas.add(this);
